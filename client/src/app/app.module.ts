@@ -8,9 +8,10 @@ import { ModalComponent } from './components/modal/modal.component';
 import { ImagedetailsComponent } from './components/imagedetails/imagedetails.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FocusDirective } from './directives/focus.directive';
 import { ImageRepoErrorComponent } from './components/image-repo-error/image-repo-error.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FocusDirective } from './directives/focus.directive';
+import { HtmlStringPipe } from './pipes/htmlstring.pipe';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     ModalComponent,
     ImagedetailsComponent,
     CommentsComponent,
+    ImageRepoErrorComponent,
     FocusDirective,
-    ImageRepoErrorComponent
+    HtmlStringPipe
   ],
   imports: [
     BrowserModule,

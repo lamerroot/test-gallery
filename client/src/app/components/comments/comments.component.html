@@ -1,7 +1,8 @@
 <div>
     <form [formGroup]="addCommentForm" (ngSubmit)="submitComment()">
-        <input type="text" class="border w-full py-2 px-4 mb-2"
-               placeholder="Your comment" formControlName="commentText" appFocus>
+        <textarea type="text" class="border w-full mt-2 mb-2 py-2 px-4 resize-none"
+                  placeholder="Add a comment" rows="3" formControlName="commentText" appFocus>
+        </textarea>
       
         <p class="text-red-600 font-medium mb-2" *ngIf="inputComment.errors && inputComment.touched">
             You cannot submit empty comments
@@ -11,5 +12,7 @@
     </form>
 </div>
 <div class="font-medium">
-    <div *ngFor="let comment of imageDetails.comments" class="mt-4 pb-4 border-b-2 border-gray-100">{{ comment }}</div>
+    <div *ngFor="let comment of imageDetails.comments" class="mt-4 pb-4 border-b-2 border-gray-100"
+         [innerHtml]="comment | htmlstring">
+    </div>
 </div>
