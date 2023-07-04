@@ -1,0 +1,15 @@
+<div>
+    <form [formGroup]="addCommentForm" (ngSubmit)="submitComment()">
+        <input type="text" class="border w-full py-2 px-4 mb-2"
+               placeholder="Your comment" formControlName="commentText" appFocus>
+      
+        <p class="text-red-600 font-medium mb-2" *ngIf="inputComment.errors && inputComment.touched">
+            You cannot submit empty comments
+        </p>
+      
+        <button type="submit" class="py-2 px-4 bg-blue-600 text-white">Add Comment</button>
+    </form>
+</div>
+<div class="font-medium">
+    <div *ngFor="let comment of imageDetails.comments" class="mt-4 pb-4 border-b-2 border-gray-100">{{ comment }}</div>
+</div>
